@@ -61,13 +61,37 @@ class MathTask:
             return "hit"
 
 
-TASK_POOL = [
+TASK_POOL_1 = [
     MathTask(
         question="Найдите наибольший корень уравнения: x^2 - 5x + 6 = 0", answers=[3]
     ),
     MathTask(
         question="Разложите на множители: x^2 - 5x + 6\n"
         "  Формат ответа: (x-a)(x-b)  пример: (x-1)(x+2)",
-        answers=["(x-2)(x-3)", "(x-3)(x-2)"]
+        answers=["(x-2)(x-3)", "(x-3)(x-2)"],
+    ),
+]
+
+
+TASK_POOL_2 = [
+    MathTask(
+        question="Найдите наибольший корень уравнения: x^2 - 5x + 6 = 0", answers=[3]
+    ),
+    MathTask(
+        question="Разложите на множители: x^2 - 5x + 6\n"
+        "  Формат ответа: (x-a)(x-b)  пример: (x-1)(x+2)",
+        answers=["(x-2)(x-3)", "(x-3)(x-2)"],
+    ),
+]
+
+
+TASK_POOL_3 = [
+    MathTask(
+        question="Найдите наибольший корень уравнения: x^2 - 5x + 6 = 0", answers=[3]
+    ),
+    MathTask(
+        question="Разложите на множители: x^2 - 5x + 6\n"
+        "  Формат ответа: (x-a)(x-b)  пример: (x-1)(x+2)",
+        answers=["(x-2)(x-3)", "(x-3)(x-2)"],
     ),
 ]
