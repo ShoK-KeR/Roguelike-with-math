@@ -1,6 +1,5 @@
 import random
 from msvcrt import getch
-from tasks import TASK_POOL
 
 
 def get_key():
@@ -58,8 +57,8 @@ class Player(Person):
     def __init__(self, position=(1, 1)):
         super().__init__("@", health_points=20, attack_damage=6, position=position)
 
-    def attack(self, target, log):
-        task = random.choice(TASK_POOL)
+    def attack(self, target, log, task_pool):
+        task = random.choice(task_pool)
         result = task.run()
 
         if result == "crit":
@@ -74,7 +73,7 @@ class Player(Person):
 
         target.take_damage(damage)
 
-    def handle_input(self, key, game_map, enemies, log):
+    def handle_input(self, key, game_map, enemies, log, task_pool):
         if key == "q":
             return False
 
@@ -89,7 +88,7 @@ class Player(Person):
 
         target = next((e for e in enemies if e.position == (tx, ty)), None)
         if target:
-            self.attack(target, log)
+            self.attack(target, log, task_pool)
         else:
             self.move(direction, game_map)
 
@@ -116,3 +115,11 @@ class Enemy(Person):
             direction = "DOWN" if py > ey else "UP"
 
         self.move(direction, game_map)
+        
+        
+class Boss(Enemy):
+    def __init__(self, symbol='B', name='Босс', position=(15, 10)):
+        super().__init__(symbol, name, position)
+        self.health_points = 30
+        self.max_hp        = 30
+        self.attack_damage = 6

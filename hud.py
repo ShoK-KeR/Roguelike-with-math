@@ -1,3 +1,6 @@
+from levels import LEVELS
+
+
 class HUD:
     HUD_W = 54
     TOP = "╔" + "═" * HUD_W + "╗"
@@ -11,11 +14,14 @@ class HUD:
         filled = round(bar_len * hp / max_hp) if max_hp else 0
         return "[" + "█" * filled + "░" * (bar_len - filled) + "]"
 
-    def render(self, player, enemies, max_enemies, combat_log):
+    def render(self, player, enemies, max_enemies, combat_log, level_num):
         p = player
 
         print(self.TOP)
-
+        
+        print(self._row(f'  Уровень {level_num} из {len(LEVELS)}'))
+        print(self.SEP)
+        
         bar = self._hp_bar(p.health_points, p.max_hp)
         print(self._row(f" {p.symbol}  Игрок"))
         print(
