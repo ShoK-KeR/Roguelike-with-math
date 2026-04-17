@@ -3,9 +3,11 @@ import threading
 
 
 class MathTask:
-    def __init__(self, question, answers):
+    def __init__(self, question, answers, time_limit = 120, crit_time = 30):
         self.question = question
         self.answers = answers
+        self.time_limit = time_limit
+        self.crit_time = crit_time
 
     def check(self, user_input):
         for correct in self.answers:
@@ -50,12 +52,12 @@ class MathTask:
         print("  Ответ: ", end="", flush=True)
 
         start = time()
-        answer = self._timed_input(timeout=60)
+        answer = self._timed_input(timeout=self.time_limit)
         elapsed = time() - start
 
         if answer is None or not self.check(answer):
             return "miss"
-        elif elapsed <= 10:
+        elif elapsed <= self.crit_time:
             return "crit"
         else:
             return "hit"
