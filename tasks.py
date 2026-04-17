@@ -189,8 +189,6 @@ TASK_POOL_1 = [
         question="Найдите корень уравнения: (5x-8)² = (5x-2)²", answers=[1]
     )
 ]
-
-
 TASK_POOL_2 = [
     MathTask(
         question="Найдите наибольший корень уравнения: x² - 5x + 6 = 0", answers=[3]
@@ -356,11 +354,165 @@ TASK_POOL_2 = [
 
 TASK_POOL_3 = [
     MathTask(
-        question="Найдите наибольший корень уравнения: x² - 5x + 6 = 0", answers=[3]
+        question="Найдите производную: f(x) = x³", answers=["3x^2"]
     ),
     MathTask(
-        question="Разложите на множители: x² - 5x + 6\n"
-        "  Формат ответа: (x-a)(x-b)  пример: (x-1)(x+2)",
-        answers=["(x-2)(x-3)", "(x-3)(x-2)"],
+        question="Найдите неопределённый интеграл: ∫ 3x² dx\n"
+        "  Формат ответа: без +C  пример: x^3",
+        answers=["x^3"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = x⁵", answers=["5x^4"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 5x⁴ dx\n"
+        "  Формат ответа: без +C  пример: x^5",
+        answers=["x^5"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 4x³", answers=["12x^2"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 12x² dx\n"
+        "  Формат ответа: без +C  пример: 4x^3",
+        answers=["4x^3"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 7x²", answers=["14x"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 14x dx\n"
+        "  Формат ответа: без +C  пример: 7x^2",
+        answers=["7x^2"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 3x⁴", answers=["12x^3"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 12x³ dx\n"
+        "  Формат ответа: без +C  пример: 3x^4",
+        answers=["3x^4"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 6x", answers=[6]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 6 dx\n"
+        "  Формат ответа: без +C  пример: 6x",
+        answers=["6x"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = x² + 3x", answers=["2x+3", "2x + 3"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (2x + 3) dx\n"
+        "  Формат ответа: без +C  пример: x^2+3x",
+        answers=["x^2+3x", "x^2 + 3x"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = x² - 4x + 1", answers=["2x-4", "2x - 4"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (2x - 4) dx\n"
+        "  Формат ответа: без +C  пример: x^2-4x",
+        answers=["x^2-4x", "x^2 - 4x"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 5x² + 2x", answers=["10x+2", "10x + 2"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (10x + 2) dx\n"
+        "  Формат ответа: без +C  пример: 5x^2+2x",
+        answers=["5x^2+2x", "5x^2 + 2x"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = sin(x)", answers=["cos(x)"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ cos(x) dx\n"
+        "  Формат ответа: без +C  пример: sin(x)",
+        answers=["sin(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = cos(x)", answers=["-sin(x)"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (-sin(x)) dx\n"
+        "  Формат ответа: без +C  пример: cos(x)",
+        answers=["cos(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 3sin(x)", answers=["3cos(x)"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 3cos(x) dx\n"
+        "  Формат ответа: без +C  пример: 3sin(x)",
+        answers=["3sin(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = -2cos(x)", answers=["2sin(x)"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 2sin(x) dx\n"
+        "  Формат ответа: без +C  пример: -2cos(x)",
+        answers=["-2cos(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = eˣ", answers=["e^x"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ eˣ dx\n"
+        "  Формат ответа: без +C  пример: e^x",
+        answers=["e^x"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 5eˣ", answers=["5e^x"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 5eˣ dx\n"
+        "  Формат ответа: без +C  пример: 5e^x",
+        answers=["5e^x"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = ln(x)", answers=["1/x"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (1/x) dx\n"
+        "  Формат ответа: без +C  пример: ln(x)",
+        answers=["ln(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 4ln(x)", answers=["4/x"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (4/x) dx\n"
+        "  Формат ответа: без +C  пример: 4ln(x)",
+        answers=["4ln(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = √x\n"
+        "  Формат ответа: пример: 1/(2sqrt(x))",
+        answers=["1/(2sqrt(x))"],
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ 1/(2√x) dx\n"
+        "  Формат ответа: без +C  пример: sqrt(x)",
+        answers=["sqrt(x)"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = 2x³ - x²", answers=["6x^2-2x", "6x^2 - 2x"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ (6x² - 2x) dx\n"
+        "  Формат ответа: без +C  пример: 2x^3-x^2",
+        answers=["2x^3-x^2", "2x^3 - x^2"],
+    ),
+    MathTask(
+        question="Найдите производную: f(x) = x⁴/4", answers=["x^3"]
+    ),
+    MathTask(
+        question="Найдите неопределённый интеграл: ∫ x³ dx\n"
+        "  Формат ответа: без +C  пример: x^4/4",
+        answers=["x^4/4"],
     ),
 ]

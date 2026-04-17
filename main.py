@@ -17,6 +17,8 @@ class Game:
     def load_level(self):
         level = LEVELS[self.current_level_index]
         self.map = Map(*level.map_size)
+        for x, y in level.walls:
+            self.map.place_wall(x, y)
         self.enemies = level.enemies
         self.max_enemies = len(self.enemies)
         self.task_pool = level.task_pool
@@ -26,6 +28,7 @@ class Game:
         if self.current_level_index >= len(LEVELS):
             return False
         self.player.position = (1, 1)
+        self.player.health_points = self.player.max_hp
         self.combat_log = []
         self.load_level()
         return True
@@ -48,8 +51,16 @@ class Game:
         print(f"  Уровень {self.current_level_index + 1} из {len(LEVELS)}")
         print("=" * 46)
         print()
-        print("  Нажмите любую клавишу...")
-        get_key()
+        cmd = input("  Нажмите Enter или введите команду: ").strip()
+
+        if cmd.startswith("goto "):
+            try:
+                n = int(cmd.split()[1]) - 1
+                if 0 <= n < len(LEVELS):
+                    self.current_level_index = n
+                    self.load_level()
+            except (ValueError, IndexError):
+                pass
 
     def run(self):
         self.show_level_intro()

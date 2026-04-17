@@ -26,6 +26,9 @@ class Map:
             return self.matrix[y][x].can_move
         return False
 
+    def place_wall(self, x, y):
+        self.matrix[y][x] = Cell("#", False)
+
     def print_map(self, entities):
         buf = [[cell.symbol for cell in row] for row in self.matrix]
 

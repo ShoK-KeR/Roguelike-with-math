@@ -96,8 +96,15 @@ class Player(Person):
 
 
 class Enemy(Person):
-    def __init__(self, symbol="g", name="Враг", position=(5, 5)):
-        super().__init__(symbol, health_points=8, attack_damage=3, position=position)
+    def __init__(
+        self, symbol="e", name="Враг", position=(5, 5), health_points=8, attack_damage=3
+    ):
+        super().__init__(
+            symbol,
+            health_points=health_points,
+            attack_damage=attack_damage,
+            position=position,
+        )
         self.name = name
 
     def ai_step(self, player, game_map, log):
@@ -115,11 +122,3 @@ class Enemy(Person):
             direction = "DOWN" if py > ey else "UP"
 
         self.move(direction, game_map)
-        
-        
-class Boss(Enemy):
-    def __init__(self, symbol='B', name='Босс', position=(15, 10)):
-        super().__init__(symbol, name, position)
-        self.health_points = 30
-        self.max_hp        = 30
-        self.attack_damage = 6
